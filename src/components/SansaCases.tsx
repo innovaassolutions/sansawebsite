@@ -536,7 +536,7 @@ export default function SansaCases() {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
           }}>
-            ✨ Sansa's Creations ✨
+            ✨ Glowing Sisters ✨
           </h1>
           <p style={{
             fontFamily: "'Patrick Hand', cursive",
@@ -612,7 +612,7 @@ export default function SansaCases() {
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
-                Hi! I'm <span style={{ color: '#FF69B4', fontWeight: 'bold' }}>Sansa</span> and I
+                Hi! we're <span style={{ color: '#FF69B4', fontWeight: 'bold' }}>Sansa</span> and <span style={{ color: '#FF69B4', fontWeight: 'bold' }}>Iona</span> and we love
                 <HeartDoodle style={{ display: 'inline-block', verticalAlign: 'middle', width: '25px', height: '25px', margin: '0 5px' }}/>
                 making art! Me and my friend paint super cute designs on phone cases and charms.
                 Every single one is made by hand with lots of love! 💕
@@ -817,7 +817,7 @@ export default function SansaCases() {
             color: '#666',
             margin: 0
           }}>
-            Made with 💕 by Sansa & Friend • 2025
+            Made with 💕 by Sansa & Iona • 2025
           </p>
         </div>
       </footer>
