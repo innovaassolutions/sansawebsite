@@ -1,7 +1,42 @@
-import React, { useState } from 'react';
+'use client';
+
+import React, { useState, CSSProperties } from 'react';
+
+// Type definitions
+interface StyleProps {
+  style?: CSSProperties;
+  color?: string;
+}
+
+interface ClassProps {
+  className?: string;
+}
+
+interface CaseDesign {
+  background: string;
+  elements: React.ReactNode;
+}
+
+interface CharmDesign {
+  stringColor?: string;
+  charmStyle: CSSProperties;
+  charmContent: React.ReactNode;
+}
+
+interface CaseProps {
+  design: CaseDesign;
+  name: string;
+  price: string;
+}
+
+interface CharmProps {
+  design: CharmDesign;
+  name: string;
+  price: string;
+}
 
 // Hand-drawn style SVG components
-const WobblyBorder = ({ className }) => (
+const WobblyBorder = ({ className }: ClassProps) => (
   <svg className={className} viewBox="0 0 100 100" preserveAspectRatio="none">
     <path
       d="M0,0 Q10,5 20,2 T40,5 T60,2 T80,6 T100,0 L100,100 Q90,95 80,98 T60,95 T40,98 T20,94 T0,100 Z"
@@ -10,7 +45,7 @@ const WobblyBorder = ({ className }) => (
   </svg>
 );
 
-const StarDoodle = ({ style, color = "#FFD700" }) => (
+const StarDoodle = ({ style, color = "#FFD700" }: StyleProps) => (
   <svg style={style} width="40" height="40" viewBox="0 0 40 40">
     <path
       d="M20,2 L23,15 L36,15 L26,23 L30,36 L20,28 L10,36 L14,23 L4,15 L17,15 Z"
@@ -22,7 +57,7 @@ const StarDoodle = ({ style, color = "#FFD700" }) => (
   </svg>
 );
 
-const HeartDoodle = ({ style, color = "#FF6B9D" }) => (
+const HeartDoodle = ({ style, color = "#FF6B9D" }: StyleProps) => (
   <svg style={style} width="35" height="35" viewBox="0 0 35 35">
     <path
       d="M17.5,30 C17.5,30 3,20 3,11 C3,5 8,2 12,4 C14,5 16,7 17.5,10 C19,7 21,5 23,4 C27,2 32,5 32,11 C32,20 17.5,30 17.5,30 Z"
@@ -33,7 +68,7 @@ const HeartDoodle = ({ style, color = "#FF6B9D" }) => (
   </svg>
 );
 
-const FlowerDoodle = ({ style, color = "#9B59B6" }) => (
+const FlowerDoodle = ({ style, color = "#9B59B6" }: StyleProps) => (
   <svg style={style} width="45" height="45" viewBox="0 0 45 45">
     <circle cx="22.5" cy="10" r="7" fill={color} stroke="#333" strokeWidth="1.5"/>
     <circle cx="32" cy="18" r="7" fill={color} stroke="#333" strokeWidth="1.5"/>
@@ -44,7 +79,7 @@ const FlowerDoodle = ({ style, color = "#9B59B6" }) => (
   </svg>
 );
 
-const RainbowDoodle = ({ style }) => (
+const RainbowDoodle = ({ style }: { style?: CSSProperties }) => (
   <svg style={style} width="60" height="35" viewBox="0 0 60 35">
     <path d="M5,32 Q5,5 30,5 Q55,5 55,32" fill="none" stroke="#FF6B6B" strokeWidth="4" strokeLinecap="round"/>
     <path d="M10,32 Q10,10 30,10 Q50,10 50,32" fill="none" stroke="#FFB347" strokeWidth="4" strokeLinecap="round"/>
@@ -54,7 +89,7 @@ const RainbowDoodle = ({ style }) => (
   </svg>
 );
 
-const CloudDoodle = ({ style }) => (
+const CloudDoodle = ({ style }: { style?: CSSProperties }) => (
   <svg style={style} width="50" height="30" viewBox="0 0 50 30">
     <ellipse cx="15" cy="20" rx="10" ry="8" fill="white" stroke="#333" strokeWidth="1.5"/>
     <ellipse cx="25" cy="15" rx="12" ry="10" fill="white" stroke="#333" strokeWidth="1.5"/>
@@ -64,7 +99,7 @@ const CloudDoodle = ({ style }) => (
 );
 
 // iPhone Case Mockup Component
-const IPhoneCase = ({ design, name, price }) => (
+const IPhoneCase = ({ design, name, price }: CaseProps) => (
   <div style={{
     background: 'white',
     borderRadius: '20px',
@@ -143,7 +178,7 @@ const IPhoneCase = ({ design, name, price }) => (
 );
 
 // Phone Charm Mockup Component
-const PhoneCharm = ({ design, name, price }) => (
+const PhoneCharm = ({ design, name, price }: CharmProps) => (
   <div style={{
     background: 'white',
     borderRadius: '20px',
